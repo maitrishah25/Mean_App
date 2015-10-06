@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="MiniBlog">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/materialize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+    <script src="/js/materialize.js"></script>
+    <script src="/js/app.js"></script>
+    <title>Mini Blog</title>
+  </head>
+  <body>
+    <div class="container" ng-controller="BlogsController">
+      <h3>Mini Blog</h3>
+      <form id="form" ng-submit="createBlog()">
+        <div class="input-field">
+          <input class="validate" type="text" ng-model="newBlog.title"><br>
+          <label for="title">Title</label>
+        </div>
+        <div class="input-field">
+          <textarea id="textarea1" class="materialize-textarea" type="text" ng-model="newBlog.entry"></textarea><br>
+          <label for="textarea1">Entry</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">Submit
+          <i class="material-icons right"></i>
+        </button>
+        <!-- <input class="" type="submit"> -->
+      </form>
+
+      <div class="blogs">
+        <section class="entry" ng-repeat="blog in blogs">
+          <h4>{{ blog.title }}</h4>
+          <p>
+            {{ blog.entry }}
+          </p>
+          <button type="button" ng-click="removeBlog(blog)">Remove</button>
+        </section>
+      </div>
+
+    </div>
+  </body>
+</html>
