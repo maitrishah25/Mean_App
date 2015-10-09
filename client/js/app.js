@@ -1,4 +1,11 @@
 console.log('app.js loaded');
+// $(document).ready(function(){
+//   var colors = ['#0b00d1', '#56adfd', '#ff3727', '#72039f', '#08e3ab', '#ed139d', '#d1013f'];
+//   function setColor(){
+//     return colors[Math.floor(Math.random()*7)]
+//   }
+//   $('.entry').css('background-color', setColor(colors));
+// });
 
 angular.module('MiniBlog', []);
 

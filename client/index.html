@@ -12,21 +12,25 @@
   </head>
   <body>
     <div class="container" ng-controller="BlogsController">
-      <h3>Mini Blog</h3>
-      <form id="form" ng-submit="createBlog()">
-        <div class="input-field">
-          <input class="validate" type="text" ng-model="newBlog.title"><br>
-          <label for="title">Title</label>
-        </div>
-        <div class="input-field">
-          <textarea id="textarea1" class="materialize-textarea" type="text" ng-model="newBlog.entry"></textarea><br>
-          <label for="textarea1">Entry</label>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit">Submit
-          <i class="material-icons right"></i>
-        </button>
-        <!-- <input class="" type="submit"> -->
-      </form>
+      <h3>Mini Blog <img src="/images/Hipster-glasses-by-Rones.png" alt="" style="width:10%" /></h3>
+        <div class="blog-form">
+        <form id="form" ng-submit="createBlog()">
+          <div class="input-field form-thing">
+            <input class="validate" type="text" ng-model="newBlog.title"><br>
+            <label for="title">Title</label>
+          </div>
+          <div class="input-field form-thing">
+            <textarea id="textarea1" class="materialize-textarea" type="text" ng-model="newBlog.entry"></textarea><br>
+            <label for="textarea1">Entry</label>
+          </div>
+          <div class="right-align">
+            <button class="btn waves-effect waves-light" type="submit">Add Entry
+              <i class="material-icons right"></i>
+            </button>
+          </div>
+          <!-- <input class="" type="submit"> -->
+        </form>
+      </div>
 
       <div class="blogs">
         <section class="entry" ng-repeat="blog in blogs">
@@ -34,7 +38,9 @@
           <p>
             {{ blog.entry }}
           </p>
-          <button type="button" ng-click="removeBlog(blog)">Remove</button>
+          <div class="right-align">
+            <button type="button" ng-click="removeBlog(blog)">Remove</button>
+          </div>
         </section>
       </div>
 
